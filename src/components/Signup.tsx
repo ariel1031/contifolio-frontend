@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const Signup = (props) => {
     const [values, setValues] = useState({
-        id: '', //const [id, setValues] = useState() 와 같다. 비어있는 문자열로 초기화
+        user_name: '', //const [id, setValues] = useState() 와 같다. 비어있는 문자열로 초기화
         email: '',
         pw: '',
         pw_re: '',
@@ -20,19 +20,21 @@ const Signup = (props) => {
 
     const handleChange = (e) => {
         const { name, value } = e.target //input 입력한 곳의 name과 입력한 값.
+        console.log('name : ', name) //사용자가 입력한 input의 이름 (id)
+        console.log('value : ', value) //사용자가 입력한 input의 값 (ariel1031). 현재 입력되는 값
         setValues({ ...values, [name]: value })
     }
     return (
         <form onSubmit={signup}>
             {/* onSubmit : 양식 제출 이벤트가 발생할 때의 동작을 지정한다. */}
             <label>
-                아이디
+                이름
                 <input
-                    name='id'
+                    name='user_name'
                     type='text'
-                    value={values.id} // 여기서 value는 현재 입력되는 값.
+                    value={values.user_name} // 여기서 value는 현재 입력되는 값.
                     onChange={handleChange}
-                    placeholder='아이디'
+                    placeholder='이름'
                 ></input>
             </label>
             <label>
