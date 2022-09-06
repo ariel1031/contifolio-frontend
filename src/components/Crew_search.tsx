@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ReactComponent as Magnifier } from '../../assets/magnifier.svg'
 
 const Crew_search = (props) => {
     const [crew, setValue] = useState('')
@@ -27,6 +28,7 @@ const Crew_search = (props) => {
                     <svg></svg>
                 </button>
             </label>
+            <input type='submit' value='' id='submitBtn' />
         </form>
     )
 }
