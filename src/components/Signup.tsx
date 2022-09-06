@@ -22,7 +22,8 @@ const Signup = (props) => {
         const { name, value } = e.target //input 입력한 곳의 name과 입력한 값.
         console.log('name : ', name) //사용자가 입력한 input의 이름 (id)
         console.log('value : ', value) //사용자가 입력한 input의 값 (ariel1031). 현재 입력되는 값
-        setValues({ ...values, [name]: value })
+        setValues({ ...values, [name]: value }) // ...values , [name]: value }
+        console.log('setValues : ', setValues) //뭔 함수가 나옴
     }
     return (
         <form onSubmit={signup}>
