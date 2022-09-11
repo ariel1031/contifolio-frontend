@@ -35,7 +35,7 @@ const Signup = (props) => {
                     type='text'
                     value={values.user_name} // 여기서 value는 현재 입력되는 값.
                     onChange={handleChange}
-                    placeholder='이름'
+                    placeholder='이름을 입력해주세요'
                 ></input>
             </label>
             <label>
@@ -45,7 +45,7 @@ const Signup = (props) => {
                     type='text'
                     value={values.email} // 여기서 value는 현재 입력되는 값.
                     onChange={handleChange}
-                    placeholder='이메일'
+                    placeholder='이메일을 입력해주세요'
                 ></input>
             </label>
             <label>
@@ -55,7 +55,7 @@ const Signup = (props) => {
                     type='password'
                     value={values.pw}
                     onChange={handleChange}
-                    placeholder='비밀번호'
+                    placeholder='비밀번호를 설정해주세요'
                 ></input>
             </label>
             <label>
@@ -65,10 +65,10 @@ const Signup = (props) => {
                     type='password'
                     value={values.pw_re} // 여기서 value는 현재 입력되는 값.
                     onChange={handleChange}
-                    placeholder='비밀번호 재확인'
+                    placeholder='비밀번호를 입력해주세요'
                 ></input>
             </label>
-            <input type='submit' />
+            <input type='submit' value='회원 가입' />
         </form>
     )
 }

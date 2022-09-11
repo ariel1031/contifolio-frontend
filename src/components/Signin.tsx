@@ -7,7 +7,7 @@ const Signin = (props) => {
 
     const signin = (e) => {
         e.preventDefault()
-        alert('로그인 되었습니다')
+        //alert('로그인 되었습니다')
     }
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -35,7 +35,7 @@ const Signin = (props) => {
                     placeholder='비밀번호'
                 ></input>
             </label>
-            <input type='submit' />
+            <input type='submit' value='로그인' />
         </form>
     )
 }
