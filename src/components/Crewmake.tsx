@@ -1,7 +1,6 @@
 const Crewmake = () => {
     return (
         <>
-            <p>이 크루 프로필 설정</p>
             <form>
                 <div>
                     <label htmlFor='fileUpload'>플러스 모양 svg?</label>
@@ -13,9 +12,13 @@ const Crewmake = () => {
                         name='fileUpload'
                     />
                 </div>
-                <div className='nickname'>
-                    <label htmlFor='nicknameinput'>별명</label>
-                    <input type='text' name='nicknameinput'></input>
+                <div className='crewname'>
+                    <label htmlFor='crewnameinput'>크루 이름</label>
+                    <input
+                        type='text'
+                        placeholder='크루 이름 입력'
+                        name='crewnameinput'
+                    ></input>
                 </div>
                 <div className='img'>커버 이미지 선택</div>
                 <div>
