@@ -1,30 +1,22 @@
 import { useState } from 'react'
+import useInput from './../hooks/useInput'
 
 const Signup = (props) => {
-    const [values, setValues] = useState({
-        user_name: '', //const [id, setValues] = useState() 와 같다. 비어있는 문자열로 초기화
+    const [values, setValues] = useInput({
+        //직접 작성한 커스텀 훅
+        user_name: '', //const [user_name, setValues] = useState('') 와 같다. 비어있는 문자열로 초기화
         email: '',
         pw: '',
         pw_re: '',
     })
-    //console.log(values) //{id: '1', email: '2', pw: '3', pw_re: '4'} 객체 그 자체가 나옴
+    console.log(values) //
 
     //event handler
     const signup = (e) => {
         e.preventDefault()
+        alert('sign up')
     }
-    // const changeId = (e) => {
-    //     e.preventDefault()
-    //     setId(e.target.value)
-    // }
-
-    const handleChange = (e) => {
-        const { name, value } = e.target //input 입력한 곳의 name과 입력한 값.
-        console.log('name : ', name) //사용자가 입력한 input의 이름 (id)
-        console.log('value : ', value) //사용자가 입력한 input의 값 (ariel1031). 현재 입력되는 값
-        setValues({ ...values, [name]: value }) // ...values , [name]: value }
-        console.log('setValues : ', setValues) //뭔 함수가 나옴
-    }
+    //handleChange를 지우고 이제 useInput 훅에서 관리함
     return (
         <form onSubmit={signup}>
             {/* onSubmit : 양식 제출 이벤트가 발생할 때의 동작을 지정한다. */}
@@ -34,7 +26,7 @@ const Signup = (props) => {
                     name='user_name'
                     type='text'
                     value={values.user_name} // 여기서 value는 현재 입력되는 값.
-                    onChange={handleChange}
+                    onChange={setValues}
                     placeholder='이름을 입력해주세요'
                 ></input>
             </label>
@@ -44,7 +36,7 @@ const Signup = (props) => {
                     name='email'
                     type='text'
                     value={values.email} // 여기서 value는 현재 입력되는 값.
-                    onChange={handleChange}
+                    onChange={setValues}
                     placeholder='이메일을 입력해주세요'
                 ></input>
             </label>
@@ -54,7 +46,7 @@ const Signup = (props) => {
                     name='pw'
                     type='password'
                     value={values.pw}
-                    onChange={handleChange}
+                    onChange={setValues}
                     placeholder='비밀번호를 설정해주세요'
                 ></input>
             </label>
@@ -64,7 +56,7 @@ const Signup = (props) => {
                     name='pw_re'
                     type='password'
                     value={values.pw_re} // 여기서 value는 현재 입력되는 값.
-                    onChange={handleChange}
+                    onChange={setValues}
                     placeholder='비밀번호를 입력해주세요'
                 ></input>
             </label>
