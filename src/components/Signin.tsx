@@ -1,18 +1,17 @@
 import { useState } from 'react'
+import useLogin from './../hooks/useLogin'
+
 const Signin = (props) => {
-    const [values, setValues] = useState({
+    const [values, setValues] = useLogin({
         email: '',
         pw: '',
     })
 
     const signin = (e) => {
         e.preventDefault()
-        //alert('로그인 되었습니다')
+        alert('로그인 되었습니다')
     }
-    const handleChange = (e) => {
-        const { name, value } = e.target
-        setValues({ ...values, [name]: value })
-    }
+
     return (
         <form onSubmit={signin}>
             <label>
@@ -21,7 +20,7 @@ const Signin = (props) => {
                     name='email'
                     type='text'
                     value={values.email}
-                    onChange={handleChange}
+                    onChange={setValues}
                     placeholder='이메일'
                 ></input>
             </label>
@@ -31,7 +30,7 @@ const Signin = (props) => {
                     name='pw'
                     type='password'
                     value={values.pw}
-                    onChange={handleChange}
+                    onChange={setValues}
                     placeholder='비밀번호'
                 ></input>
             </label>
