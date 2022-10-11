@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import useLogin from './../hooks/useLogin'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const Signin = (props) => {
     const [values, setValues] = useLogin({
@@ -9,7 +11,7 @@ const Signin = (props) => {
 
     const signin = (e) => {
         e.preventDefault()
-        alert('로그인 되었습니다')
+        toast('로그인 성공!')
     }
 
     return (

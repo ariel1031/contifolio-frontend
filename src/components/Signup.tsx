@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import useInput from './../hooks/useInput'
+import { FormContainer } from './Signup.style'
 
 const Signup = (props) => {
     const [values, setValues] = useInput({
@@ -18,7 +19,7 @@ const Signup = (props) => {
     }
     //handleChange를 지우고 이제 useInput 훅에서 관리함 onChange={handleChange} //Signup.tsx있던 handleChange를 useInput의 onChange={setValues}로 바꿈
     return (
-        <form onSubmit={signup}>
+        <FormContainer onSubmit={signup}>
             {/* onSubmit : 양식 제출 이벤트가 발생할 때의 동작을 지정한다. */}
             <label>
                 이름
@@ -61,7 +62,7 @@ const Signup = (props) => {
                 ></input>
             </label>
             <input type='submit' value='회원 가입' />
-        </form>
+        </FormContainer>
     )
 }
 export default Signup
